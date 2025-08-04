@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "2f2d98bc-0b91-4d89-b3b4-882cf41f8f61",
+		"name": "Petstore API Collection - Complete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47287394"
+	},
+	"item": [
+		{
+			"name": "GET Requests",
+			"item": [
+				{
+					"name": "GET - Find pets by status (available)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=available",
+							"protocol": "https",
+							"host": ["petstore", "swagger", "io"],
+							"path": ["v2", "pet", "findByStatus"],
+							"query": [
+								{
+									"key": "status",
+									"value": "available"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Find pet by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/12345",
+							"protocol": "https",
+							"host": ["petstore", "swagger", "io"],
+							"path": ["v2", "pet", "12345"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST Requests",
+			"item": [
+				{
+					"name": "POST - Add new pet (Dog)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 12345,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"Dogs\"\n  },\n  \"name\": \"Buddy\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"friendly\"\n    }\n  ],\n  \"status\": \"available\"\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": ["petstore", "swagger", "io"],
+							"path": ["v2", "pet"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Add new pet (Cat)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 67890,\n  \"category\": {\n    \"id\": 2,\n    \"name\": \"Cats\"\n  },\n  \"name\": \"Whiskers\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 2,\n      \"name\": \"cute\"\n    }\n  ],\n  \"status\": \"available\"\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": ["petstore", "swagger", "io"],
+							"path": ["v2", "pet"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT Requests",
+			"item": [
+				{
+					"name": "PUT - Update pet (Change status to sold)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 12345,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"Dogs\"\n  },\n  \"name\": \"Buddy Updated\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"friendly\"\n    }\n  ],\n  \"status\": \"sold\"\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": ["petstore", "swagger", "io"],
+							"path": ["v2", "pet"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Update pet (Change name and status)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 67890,\n  \"category\": {\n    \"id\": 2,\n    \"name\": \"Cats\"\n  },\n  \"name\": \"Whiskers Premium\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 2,\n      \"name\": \"premium\"\n    }\n  ],\n  \"status\": \"pending\"\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": ["petstore", "swagger", "io"],
+							"path": ["v2", "pet"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE Requests",
+			"item": [
+				{
+					"name": "DELETE - Remove pet by ID (12345)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/12345",
+							"protocol": "https",
+							"host": ["petstore", "swagger", "io"],
+							"path": ["v2", "pet", "12345"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Remove pet by ID (67890)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/67890",
+							"protocol": "https",
+							"host": ["petstore", "swagger", "io"],
+							"path": ["v2", "pet", "67890"]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
